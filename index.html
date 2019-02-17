@@ -9,60 +9,74 @@
 	 <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
- 	
+ 	<style type="text/css">
+ 		.box{
+ 			background-image: url(logo_test_2.png);
+ 			background-size: cover;
+ 		}
+ 		.trans{
+ 			background: rgba(0,0,0,.6);
+ 			height: 600px;
+ 		}
+ 		
+ 		
+ 	</style>
 
  
 </head>
 <body>
-	<nav>
+	<nav class="hide-on-med-and-down">
 		<div class="container">
 			<div class="input-field">
 			<ul class="right">
-				<li><a href="#">About US</a></li>
+				
 				<li><input type="text" placeholder="USer ID"  ></li>
-				<li><input type="password" placeholder="password"></li>
+				<li><input id= type="password" placeholder="password"></li>
 				<li><a href="#" class="btn green waves-effect waves-light">login</a></li>
 				<li><a href="#">forgot password??</a></li>
+				<li><a href="#">About US</a></li>
 
 			</ul>
 			</div>
 			</div>
 
 	</nav>
-	<div class="row">
+	<div class="row" id="reg">
 		
-		<div class="col s12  m6 l6" >
-			<div class="card grey light-3">
+		<div class="col s12  m6 l5" >
+			<div class="card " >
 				
-				<div class="card-contex white-text">
-					<span class="card-title center-align"></span>
+				<div class="card-contex green-text">
+					<span class="card-title center-align">The Scintillators</span>
 					<h1>Hey! Welcome,</h1>
 					<div class="card-image">
-					<img class="responsive-img" src="logo_test_2.png">
+					<img class="responsive-img" src="ttt.png">
 				</div>
 				</div>
 			 
 			</div>
 			
 		</div>
-		<div class="col s12 m6 l6">
-			<div class="card center-align pink">
+		<div class="col s12 m6 l6 box">
+			<div class="card  white-text trans">
 			<span class="card-title center-align">Join With Us .</span>
+			<h1 class="center-align">Login Here,</h1>
 				<div class="card-contex white-text">
-					<div class="card-image">
-					<img class="responsive-img" src="logo_test_2.png">
-				</div>
-			
 			<div class="form-field">
 				<div class="input-field center-align">
-				<input type="text" placeholder="full name">
-				<input type="email" placeholder="Email ID">
-				<input type="text" placeholder="Ph. Number">
-				<input type="Text" placeholder="Roll NO.">
-				<input type="password" placeholder="password">
-				<a href="#" class="btn indigo waves-effect waves-light">Sign up</a>
+				<input class="white-text" type="Text" placeholder="Roll NO.">
+				<input class="white-text" id="paswod" type="password" placeholder="password">
+				</div>
+				<div class="form-field white-text">
+				<label>
+				<input type="checkbox" class="filled-in">
+				<span class=" white-text" id="paswd">see password</span>
+				</label>
+				<a href="#" style="width: 100%" class="btn-large indigo waves-effect waves-light">Login</a>
 				<div class="card-action">
-					<a href="#">already have an account??</a>
+				<h4>New here, join us today..</h4>
+				<h5>setup easily by clicking below..... </h5>
+				<button class="btn-large green waves-effect waves-light" id="signup">Register Here</button>
 				</div>
 				</div>
 
@@ -72,10 +86,71 @@
 	</div>
 	
 </div>
+
+<div class="container " id="show_signup">
+	<div class="col s12 m6 l6 box">
+			<div class="card yellow-text dark-2 trans">
+			<span class="card-title center-align">lets fill up your Details below.</span>
+			<h1 class="center-align">Register Here,</h1>
+				<div class="card-contex white-text">
+			<div class="form-field">
+				<div class="input-fields amber-text text-lighten-4">
+				<input type="Text" placeholder="Full Name" required>
+				<input type="email" placeholder="Email ID">
+				<input type="Text" placeholder="IOE Roll No.">
+				<input type="Text" placeholder="contact">
+				<input id="paswod" type="password" placeholder="password">
+				</div>
+				<div class="form-field white-text">
+				<label>
+				<input type="checkbox" class="filled-in">
+				<span class=" white-text" id="paswd">see password</span>
+				</label>
+				<a href="#" style="width: 100%;  margin-top:15px;" class="btn-large indigo waves-effect waves-light">Submit</a>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 <footer class="page-footer">
 	 <div class="footer-copyright">
             <div class="container">
             © 2019 The Scintillators
 </footer>
 </body>
+<script src=" https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <script type='text/javascript'>
+    		$(document).ready(function() {
+  			$('#paswd').click(function() {
+    	if ($('#paswod').attr('type') == 'text') {
+      $('#paswod').attr('type', 'password');
+    } else {
+      $('#paswod').attr('type', 'text');
+    }
+  });
+  			$("#show_signup").hide();
+
+
+
+    $("#signup").click(function(){
+    $("#reg").hide();	
+    $("#show_signup").show();
+  });
+
+		
+});
+
+    		
+      
+    </script>
 </html>
